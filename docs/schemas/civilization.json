@@ -1,0 +1,9 @@
+{
+  "key": "Name of Civilization in Lowercase, Spaces replaced with Minus (-)",
+  "icon": "URL to Icon",
+  "leaders": 0,
+  "affiliation": {
+    "type": "Mod/DLC/Game",
+    "value": "Key of Mod/DLC (leave empty if Game is selected)"
+  }
+}

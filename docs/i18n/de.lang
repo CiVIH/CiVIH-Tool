@@ -1,0 +1,6 @@
+# I18n Key = Translated Value
+# Civilizations: "civilization-key.i18nKey"
+# Example:
+civilization-key.name=Name of Civilization
+civilization-key.description=Description of Civilization
+civilization-key.leader.0=Name of Leader 1
