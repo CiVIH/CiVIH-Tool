@@ -9,14 +9,14 @@ import java.util.concurrent.ConcurrentHashMap
  */
 class Language(
     /**
-     * The display name of the language.
-     */
-    val name: String,
-    /**
      * The key of the language.
      */
     val key: String
 ) {
+    /**
+     * The display name of the language.
+     */
+    var name: String = "undefinied"
 
     /**
      * Whether the language was initialized successfully or not.
@@ -31,8 +31,13 @@ class Language(
         val langFile = File(langPath)
         if (langFile.exists()) {
             for (line in Files.readAllLines(langFile.toPath())) {
-                if (line.startsWith("#")) continue;
-                if (!line.contains("=")) continue;
+                if (line?.isEmpty() != false) continue
+                if (line.startsWith("#")) continue
+                if (!line.contains("=")) continue
+                if (line.startsWith("lang.name=")) {
+                    this.name = line.split("=")[1]
+                    continue
+                }
                 val parts: List<String> = line.split("=")
                 val lkey: String = parts[0].trim()
                 val value: String = parts[1].trim()

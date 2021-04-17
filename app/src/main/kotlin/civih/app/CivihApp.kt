@@ -1,3 +1,4 @@
+import civih.app.controller.CivilizationController
 import civih.app.views.MainView
 import javafx.scene.image.Image
 import javafx.stage.Stage
@@ -23,5 +24,9 @@ class CivihApp : App(MainView::class) {
 }
 
 fun main(args: Array<String>) {
+    CivilizationController.initialize()
+    for (civ in CivilizationController.civilizations) {
+        println(civ.getName())
+    }
     launch<CivihApp>(args)
 }

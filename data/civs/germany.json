@@ -1,0 +1,8 @@
+{
+  "key": "germany",
+  "icon": "https://static.wikia.nocookie.net/civilization/images/8/89/Deutschland_%28Civ6%29.png/revision/latest/top-crop/width/360/height/450?cb=20200604135301&path-prefix=de",
+  "leaders": 1,
+  "affiliation": {
+    "type": "GAME"
+  }
+}

@@ -1,5 +1,6 @@
 package civih.app.i18n
 
+import java.io.File
 import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.system.exitProcess
 
@@ -18,11 +19,15 @@ object I18n {
     private var selectedLanguage: Language
 
     init {
-        this.selectedLanguage = Language("English", "en")
+        this.selectedLanguage = Language("en")
         if (!this.selectedLanguage.isInitialized) {
             exitProcess(1)
         } else {
             this.languages += this.selectedLanguage
+            for (langFile in File(System.getProperty("user.dir") + "/langs").listFiles() ?: arrayOf()) {
+                if (langFile.nameWithoutExtension == "en") continue
+                this.registerLanguage(langFile.nameWithoutExtension)
+            }
         }
     }
 
@@ -36,8 +41,8 @@ object I18n {
     /**
      * Registers a language in the i18n system.
      */
-    fun registerLanguage(name: String, key: String) {
-        val language = Language(name, key)
+    fun registerLanguage(key: String) {
+        val language = Language(key)
         if (!language.isInitialized) return
         this.languages += language
     }
