@@ -1,12 +1,12 @@
-lang.name=English
+lang.name=Deutsch
 
 # Application Properties
 app.title=CiVIH - Your Civilization 6 Helper Tool
 
 # Civilizations
 # Germany
-civilization.germany.name=Germany
-civilization.germany.leader.0=Frederick Barbarossa
+civilization.germany.name=Deutschland
+civilization.germany.leader.0=Friedrich Barbarossa
 
 #Macedon
 
